@@ -4,11 +4,19 @@ import jobListings from "./components/ObjectData.jsx";
 const App = () => {
   return (
     <>
-      <div className="Parent">
-        {jobListings.map((element) => {
-          return <Cards companyLogo={element.logo} companyName={element.companyName} daysPosted={element.daysPosted} jobTitle={element.jobTitle} jobTypes={element.jobTypes} salaryPerHour={element.salaryPerHour}/>;
-        })}
-      </div>
+      {jobListings.map((element, index) => { return(
+        <div className="Parent" key={index}>
+          <Cards
+            companyLogo={element.logo}
+            companyName={element.companyName}
+            daysPosted={element.daysPosted}
+            jobTitle={element.jobTitle}
+            jobTypes={element.jobTypes}
+            salaryPerHour={element.salaryPerHour}
+          />
+        </div>
+        )
+      })}
     </>
   );
 };
