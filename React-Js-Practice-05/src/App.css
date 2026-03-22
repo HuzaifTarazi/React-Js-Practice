@@ -1,0 +1,6 @@
+.flex-items{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
