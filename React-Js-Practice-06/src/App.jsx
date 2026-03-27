@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/HeroSection/Hero.jsx";
 import Festivals from "./components/AvailableFestivals/Festivals.jsx";
-import {festivalIcons} from "./FestivalApi"
+import { festivalIcons } from "./FestivalApi";
 import PopularContent from "./components/Popular/PopularContent.jsx";
 
 const App = () => {
@@ -11,9 +11,8 @@ const App = () => {
     <>
       <Navbar />
       <Hero />
-      <Festivals festivalIcons={festivalIcons}/>
-      <PopularContent/>
-
+      <Festivals festivalIcons={festivalIcons} />
+      <PopularContent />
     </>
   );
 };
