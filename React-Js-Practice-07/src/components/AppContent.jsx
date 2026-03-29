@@ -5,6 +5,8 @@ import ShowHide from "./ShowHide";
 import AddItem from "./AddItem";
 import Filteration from "./Filteration";
 import LikeSystem from "./LikeSystem";
+import InputField from "./InputField";
+import TwoWayBinding from "./TwoWayBinding";
 
 const AppContent = () => {
   const [initialValue, setfirst] = useState(0);
@@ -46,6 +48,8 @@ const AppContent = () => {
       <AddItem />
       <Filteration />
       <LikeSystem/>
+      <InputField/>
+      <TwoWayBinding/>
     </div>
   );
 };
