@@ -74,7 +74,14 @@ const Form = () => {
         <h1 className="text-3xl font-bold text-center">Take Notes</h1>
         {notes.map((elment, id) => {
           return (
-            <NotesDetail key={id} idx={id} newNotes={setNotes} notesArr = {notes} title={elment.title} detail={elment.detail} />
+            <NotesDetail
+              key={id}
+              idx={id}
+              newNotes={setNotes}
+              notesArr={notes}
+              title={elment.title}
+              detail={elment.detail}
+            />
           );
         })}
       </div>
