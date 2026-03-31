@@ -5,7 +5,6 @@ const ToggleButton = () => {
 
   const toggleFun = () => {
     setboolean(!boolean);
-    console.log(boolean)
   };
   return (
     <>
