@@ -22,7 +22,7 @@ const Form = () => {
   const formSubmition = (event) => {
     event.preventDefault();
 
-    if (title === "" && detail === "") {
+    if (title === "" || detail === "") {
       setError(true);
       return;
     }
@@ -47,7 +47,7 @@ const Form = () => {
             <div
               className={`border ${error ? "bg-red-400" : "bg-gray-400"} rounded w-1/3 text-center py-2`}
             >
-              {error ? "Error Found..!" : "Error Not Found..!"}
+              {error ? "Error Data Not Found..!" : "Insert Data..!"}
             </div>
           </div>
 
@@ -74,7 +74,7 @@ const Form = () => {
         <h1 className="text-3xl font-bold text-center">Take Notes</h1>
         {notes.map((elment, id) => {
           return (
-            <NotesDetail key={id} title={elment.title} detail={elment.detail} />
+            <NotesDetail key={id} idx={id} newNotes={setNotes} notesArr = {notes} title={elment.title} detail={elment.detail} />
           );
         })}
       </div>
