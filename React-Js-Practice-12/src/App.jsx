@@ -3,7 +3,7 @@ import TaskForm from "./components/TaskForm";
 
 const App = () => {
   return (
-    <div className="bg-gray-800 py-10 px-10 h-full">
+    <div className="bg-gray-800 py-10 px-10 h-full w-full">
       <TaskForm />
     </div>
   );
