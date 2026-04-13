@@ -1,10 +1,9 @@
 import { useState } from "react";
-import Connection from "./Connection";
+import Connection from "./Connection.jsx";
 
 const App = () => {
   const [room, setRoom] = useState("General");
   const [show, setShow] = useState(false);
-  const [serverURL, setServerURL] = useState("https:/Acedynamics.com/about");
 
   return (
     <>
@@ -32,23 +31,7 @@ const App = () => {
         {show ? "Close Chat" : "Open Chat"}
       </button>
       <br /> <br />
-      {show && (
-        <>
-          <label htmlFor="url">Server URL:</label>
-          <br />
-          <input
-            value={serverURL}
-            type="text"
-            onChange={(e) => {
-              setServerURL(e.target.value);
-            }}
-            placeholder="Server URL"
-            style={{ padding: "10px" }}
-          />
-          <h1>WELCOME TO {room}</h1>
-        </>
-      )}
-      <Connection roomId={room} serverURL={serverURL} />
+      {show && <Connection roomId={room} />}
     </>
   );
 };

@@ -1,7 +1,7 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
-const Connection = ({ roomId, serverURL }) => {
-  console.log(roomId, serverURL);
+const Connection = ({ roomId }) => {
+  const [serverURL, setServerURL] = useState("https:/Acedynamics.com/");
 
   function CreateConnection(roomId, serverURL) {
     return {
@@ -26,7 +26,22 @@ const Connection = ({ roomId, serverURL }) => {
     };
   }, [roomId, serverURL]);
 
-  return <></>;
+  return (
+    <>
+      <label htmlFor="url">Server URL:</label>
+      <br />
+      <input
+        value={serverURL}
+        type="text"
+        onChange={(e) => {
+          setServerURL(e.target.value);
+        }}
+        placeholder="Server URL"
+        style={{ padding: "10px" }}
+      />
+      <h1>WELCOME TO {roomId}</h1>
+    </>
+  );
 };
 
 export default Connection;
