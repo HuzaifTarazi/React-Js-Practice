@@ -1,9 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Connection from "./Connection.jsx";
 
 const App = () => {
   const [room, setRoom] = useState("General");
   const [show, setShow] = useState(false);
+  const [pointer, setPointer] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    function pointer(e) {
+      setPointer({ x: e.clientX, y: e.clientY });
+    }
+    window.addEventListener("pointermove", pointer);
+    return () => {
+      window.removeEventListener('pointermove', pointer)
+    };
+  }, []);
 
   return (
     <>
@@ -32,6 +43,20 @@ const App = () => {
       </button>
       <br /> <br />
       {show && <Connection roomId={room} />}
+      <div
+        style={{
+          position: "absolute",
+          backgroundColor: "pink",
+          borderRadius: "50%",
+          opacity: 0.6,
+          transform: `translate(${pointer.x}px, ${pointer.y}px)`,
+          pointerEvents: "none",
+          left: -20,
+          top: -20,
+          width: 40,
+          height: 40,
+        }}
+      />
     </>
   );
 };
