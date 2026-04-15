@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Connection from "./Connection.jsx";
+import Challenge_1 from "./challenge_1.jsx";
 
 const App = () => {
   const [room, setRoom] = useState("General");
@@ -12,7 +13,7 @@ const App = () => {
     }
     window.addEventListener("pointermove", pointer);
     return () => {
-      window.removeEventListener('pointermove', pointer)
+      window.removeEventListener("pointermove", pointer);
     };
   }, []);
 
@@ -43,6 +44,9 @@ const App = () => {
       </button>
       <br /> <br />
       {show && <Connection roomId={room} />}
+      <br />
+      <hr />
+      <Challenge_1 />
       <div
         style={{
           position: "absolute",
